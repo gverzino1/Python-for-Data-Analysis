@@ -1,0 +1,14 @@
+Recommender Systems 
+
+A full recommender system requires a heavy linear algebra background. 
+
+There are two types of systems:
+    Collaborative Filtering (CF) -- Produces recommendations based on the knowledge of users attitudes to items (wisdom of the crowd). Filters based on USER preferences.
+    Content-based -- Focus on attributes of the items and give recommendations based on the similiarity between them. Filters based on ITEM similarities.
+    
+    
+CF is more common. Better results. Easy to understand. The algorithm can do feature learning on its own, so it can begin to learn for itself what features to use.
+    Memory-Based -- performed by computing cosine similarity
+    Model-Based -- performed using singular value decomposition
+    
+

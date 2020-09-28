@@ -1,0 +1,32 @@
+Principle component analysis (aka factor analysis)
+
+This falls under the umbrella of "dimension reduction." There are also heatmaps.
+
+It reduces the number of variables of a dataset so you can more easily explore and visualize the most important variables (columns of data) at the sake of a little accuracy. It is an unsupervised stats technique. It takes maybe 3-4 variables, and the correlation between them, and plots them on a 2D graph. 
+
+So you can see how variable 1 and variable 2 plot.
+Then how variable 1 and variable 2 plots.
+And how variable 2 and variable 3 plots. Etc etc
+
+As you continue to do this, you'll begin to see positive and negative correlations between them. The variables that are highly correlated CLUSTER TOGETHER. These clusters are displayed on an x-y graph, where PC-1 is on x-axis and PC-2 on y-axis. The differences along the first principal component axis are MORE important (reasons described below). So if you're very spread apart on the x-axis, you're more different than the same distance along the y-axis.
+
+Method:
+    1. Usually you need to standarsize the data first, by some sort of scale
+    2. Theres no real model, per say, only a way to analyze the data
+    
+To standardize: 
+You need to standardize because variables with large differences will dominate those with smaller ranges (for example, ones between 0-100 and between 0-1). You do this by taking:
+            z = value - mean / standard deviation 
+            
+Then use a covariance matrix computation:
+Here you understand how the input variables are varying from the mean. We are getting the variances of each initial variable. If it's positive, the 2 variables are correlated (and if negative theyre inversely correlated). 
+
+Then compute eigenvectors and eigenvalues of covriance matrix to indentify the principle components:
+These PCAs are mixtures of the initial variables. The idea is to put the maximum possible information in the first component, and then the maximum remaining info into the second and so on, etc. So at the end, you discard the components with "low information" and can consider the remaining components as your new variables. The first PC maximizes the distance of each data point to the line.
+
+BUT THEY ARENT YOUR INITIAL VARIABLES. They're linear combinations of them. So they don't have any real meaning. 
+
+Then you put the PCs (which are eigenvectors (x,y) with eigenvalues) in order of those with the highest eigenvalues.
+    
+Mathematically:
+Regression determines best fit of line to dataset, factor analysis figures out the best "right anagles" to a dataset, the lines are perpendicular. These right angles are called orthogonal lines, that go perpendicular to the regression line. By doing this a number of times, we essentially begin to create components. 

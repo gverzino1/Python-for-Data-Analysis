@@ -1,0 +1,21 @@
+NLP
+
+Examples:
+    1. Can help group news articles by topic
+    2. Legal firm needs to sift through thousands of legal documents
+    
+If you have 2 documents, one says "blue house" and the other "red house", what you can do is featurize based on a vector. Such that the documents fall under (red, blue, house). In this way, "blue house" document would be (0, 1, 1) and "red house" would be (1, 0, 1). This is known as a "Bag of Words"
+
+You can then use "cosine similarity" which is the dot product of A and B, divided by the dot product of their magnitues. 
+
+A * B / ||A||*||B||
+
+You can also improve "Bag of Words" by adjusting counts based on their frequency in documents. This is known as TF-IDF (Term Frequency - Inverse Document Frequency). Mathematically, you can say:
+    TF(d,t) where the number of occurences (t) in document (d) gives you the importance of the term within that document.
+    
+    IDF(t) = log(D/t) where a log is taken of the total number of documents (D) is divided by the number of documents with the term (t) which gives you the important of the term in ALL the documents. 
+    
+    Together TF-IDF is: W = tf * log(N/df)
+        tf = frequency of x in y (document)
+        df = number of documents containing x
+        N = number of documents

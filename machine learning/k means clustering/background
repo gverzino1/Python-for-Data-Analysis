@@ -1,0 +1,21 @@
+K means is unsupervised learning algorithm. It attempts to group similar clusters together.
+
+For example:
+    Cluster similar documents
+    Cluster customers based on features
+    Identify similar physical groups
+    
+Goal: Divides data into distinct groups.
+How: 
+    1. Choose a number of clusters "K"
+    2. Then assign each point to a specific cluster (theyll still be together)
+    3. Then cluster centroids are computed, which will be overlapping at first because the initial cluster assignments were choosen at random
+    4. Each observation will then be assigned to the nearest centroid
+    5. Then the cluster centroids are moved to the observation groups
+
+Determining "K": Use the "elbow method":
+Compute the sum of squared error (SSE) for some values of K, which is the SSE between K its centroid. If you plot K against SSE, youll see the error decreases as K gets larger. The "elbow method" chooses a K at which SSE decreases abruptly, or where the SSE is "mostly" reduced and any further increase in K doesnt improve your cluster assignment.
+    
+
+    
+ 
